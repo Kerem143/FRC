@@ -9,6 +9,5 @@ services:
       - "7784:5000"
     volumes:
       - ./app:/app
-      - ./c_kodlari:/app/c_kodlari
     environment:
       - FLASK_ENV=production
