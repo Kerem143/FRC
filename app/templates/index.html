@@ -18,9 +18,13 @@
         <p>Calistirmak istediginiz C++ kodunu secin:</p>
         
         <div class="file-list">
-            {% for file in files %}
-                <button onclick="kodCalistir('{{ file }}')">File: {{ file }}</button>
-            {% endfor %}
+            {% if files %}
+                {% for file in files %}
+                    <button onclick="kodCalistir('{{ file }}')">File: {{ file }}</button>
+                {% endfor %}
+            {% else %}
+                <p style="color: #ffcc00;">Klasor icinde hic .cpp dosyası bulunamadi!</p>
+            {% endif %}
         </div>
 
         <h3>Terminal Console Output</h3>
@@ -48,3 +52,4 @@
     </script>
 </body>
 </html>
+
