@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FRC C++ Terminal Server</title>
+    <style>
+        body { background-color: #1e1e1e; color: #ffffff; font-family: sans-serif; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        button { background-color: #007acc; color: white; border: none; padding: 10px 15px; margin: 5px; cursor: pointer; border-radius: 4px; }
+        button:hover { background-color: #005999; }
+        .terminal { background-color: #000000; color: #00ff00; font-family: monospace; padding: 20px; border-radius: 5px; min-height: 200px; white-space: pre-wrap; border: 1px solid #333; margin-top: 20px; }
+        h1 { color: #007acc; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FRC Team - C++ Terminal Compiler</h1>
+        <p>Calistirmak istediginiz C++ kodunu secin:</p>
+        
+        <div class="file-list">
+            {% for file in files %}
+                <button onclick="kodCalistir('{{ file }}')">File: {{ file }}</button>
+            {% endfor %}
+        </div>
+
+        <h3>Terminal Console Output</h3>
+        <div class="terminal" id="output">Kod calistirmak icin yukaridan bir dosyaya tiklayin...</div>
+    </div>
+
+    <script>
+        function kodCalistir(dosyaAdi) {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerText = "Derleniyor ve calistiriliyor...\n";
+            
+            fetch('/calistir', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ dosya_adi: dosyaAdi })
+            })
+            .then(res => res.json())
+            .then(data => {
+                outputDiv.innerText = data.output || data.error;
+            })
+            .catch(err => {
+                outputDiv.innerText = "Bir hata olustu: " + err;
+            });
+        }
+    </script>
+</body>
+</html>
