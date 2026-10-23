@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  frc-web-derleyici:
+    build: .
+    container_name: frc_compiler_app
+    restart: unless-stopped
+    ports:
+      - "7784:5000"
+    volumes:
+      - ./app:/app
+      - ./c_kodlari:/app/c_kodlari
+    environment:
+      - FLASK_ENV=production
