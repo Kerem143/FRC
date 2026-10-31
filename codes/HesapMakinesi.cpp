@@ -34,5 +34,5 @@ int main() {
         cout << "Gecersiz islem!" << endl;
     }
 
-    return 0;
+    
 }
