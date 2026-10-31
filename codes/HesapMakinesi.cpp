@@ -4,7 +4,7 @@ char islem;
 double x;
 double y;
 int main (){
-   cout << "1.sayiyi girin: ";
+   cout << "1.sayiyi girin: "<< endl;
    cin >> x;
    cout << "yapmak istediginiz islemi (+,-,*,/) girin: "<< endl;
    cin >> islem;
