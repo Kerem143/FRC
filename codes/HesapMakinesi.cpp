@@ -6,13 +6,13 @@ double x;
 double y;
 
 int main() {
-    cout << "1. sayiyi girin: " << flush;
+    cout << "1. sayiyi girin: " << endl;
     cin >> x;
 
-    cout << "yapmak istediginiz islemi (+,-,*,/) girin: " << flush;
+    cout << "yapmak istediginiz islemi (+,-,*,/) girin: " << endl;
     cin >> islem;
 
-    cout << "2. sayiyi girin: " << flush;
+    cout << "2. sayiyi girin: " << endl;
     cin >> y;
 
     if (islem == '+') {
