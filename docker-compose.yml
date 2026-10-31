@@ -1,8 +1,10 @@
-
 services:
   c-runner-app:
     build: .
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
     ports:
-      - "7789:8080"
+      - "7689:8080"
     volumes:
       - ./codes:/app/codes
