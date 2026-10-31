@@ -120,4 +120,4 @@ def send_input():
     return render_template_string(HTML_TEMPLATE, files=files, output=output_log)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8080, debug=False, use_reloader=False, threaded=True)
