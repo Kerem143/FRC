@@ -5,11 +5,11 @@ double x;
 double y;
 int main (){
    cout << "1.sayiyi girin: "<< endl;
-   cin >> x;
+   cin >> x >> endl;
    cout << "yapmak istediginiz islemi (+,-,*,/) girin: "<< endl;
    cin >> islem;
    cout << "2.sayiyi girin: "<< endl;
-   cin >> y;
+   cin >> y >> endl;
    if (islem == '+') {
     cout << x + y;
    }
