@@ -6,9 +6,9 @@ double y;
 int main (){
    cout << "1.sayiyi girin: ";
    cin >> x;
-   cout << "yapmak istediginiz islemi (+,-,*,/) girin: ";
+   cout << "yapmak istediginiz islemi (+,-,*,/) girin: "<< endl;
    cin >> islem;
-   cout << "2.sayiyi girin: ";
+   cout << "2.sayiyi girin: "<< endl;
    cin >> y;
    if (islem == '+') {
     cout << x + y;
